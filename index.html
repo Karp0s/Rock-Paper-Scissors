@@ -3,10 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Page Title</title>
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
 </head>
 <body>
 	<script>
-        
+        function getcomputerchoice(options = ['rock','paper','scissors']) {
+            var choice = options[Math.floor(Math.random() * options.length)];
+            return choice;
+        }
+
     </script>
 </body>
 </html>
