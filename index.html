@@ -19,15 +19,15 @@
 
         function playRound (playerSelection, computerSelection) {
             if (computerSelection === playerSelection) {
-                return ('You clashed and thrashed heads with the bot but nothing happened, try again!')
+                return ('You and the bot did the same thing, try again!')
             } else if (
                 playerSelection === 'rock' && computerSelection === 'scissors'||
                 playerSelection === 'paper' && computerSelection === 'rock'||
                 playerSelection === 'scissors' && computerSelection === 'paper'
             ) {
-                return ('You won that round!');
+                return ('You win this round, your ' + playerSelection + " beat its " + computerSelection);
             } else {
-                return ('You lost this round!');
+                return ('You lost this round, its ' + computerSelection + " beat your " + playerSelection);
             }
         }
 
@@ -42,15 +42,15 @@
                 let computerSelection = getComputerChoice();
                 let result = playRound(playerSelection, computerSelection);
                 console.log(result)
-                if (result ==='You won that round!') {
+                if (result === 'You win this round, your ' + playerSelection + " beat its " + computerSelection) {
                     playerScore++;
-                } else if (result ==='You lost this round!') {
+                } else if (result ==='You lost this round, its ' + computerSelection + " beat your " + playerSelection) {
                     computerScore++;
                 } else {
                     tieScore++;
                 }
-                console.log(computerScore)
-                console.log(playerScore)
+                console.log("Computer - " + computerScore)
+                console.log("Player - " + playerScore)
                 if (playerScore === 5) {
                     console.log("You won the game!")
                 } else if (computerScore === 5) {
