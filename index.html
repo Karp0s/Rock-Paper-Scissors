@@ -18,8 +18,10 @@
         }
 
         function playRound (playerSelection, computerSelection) {
-            if (computerSelection === playerSelection) {
-                return ('You and the bot did the same thing, try again!')
+            if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
+                return ("You can't use that here, try again")
+            } else if (computerSelection === playerSelection) {
+                return ("You and the bot did the same thing, try again!") 
             } else if (
                 playerSelection === 'rock' && computerSelection === 'scissors'||
                 playerSelection === 'paper' && computerSelection === 'rock'||
